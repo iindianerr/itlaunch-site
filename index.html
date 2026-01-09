@@ -128,14 +128,13 @@
 
         .card { 
             background: white; 
-            padding: 0; /* Usunięty padding, aby nagłówek dotykał brzegów */
+            padding: 0; 
             border: 5px solid black; 
             box-shadow: 8px 8px 0px black; 
             text-align: center;
-            overflow: hidden; /* Aby tło nagłówka nie wystawało poza zaokrąglenia/ramki */
+            overflow: hidden;
         }
 
-        /* NAGŁÓWEK OD RANTU DO RANTU */
         .card h3 { 
             font-family: 'Bebas Neue', sans-serif; 
             font-weight: 400;
@@ -143,20 +142,19 @@
             margin: 0; 
             background-color: var(--yellow); 
             padding: 15px 10px;
-            display: block; /* Rozciąga na całą szerokość */
+            display: block; 
             text-transform: uppercase;
             letter-spacing: 1px;
             line-height: 1;
-            border-bottom: 5px solid black; /* Linia oddzielająca od tekstu */
+            border-bottom: 5px solid black; 
         }
 
-        /* Treść wewnątrz kafelka (padding przywrócony tylko dla tekstu) */
         .card p {
             font-family: 'Inter', sans-serif;
             font-weight: 500; 
             line-height: 1.6;
             font-size: 0.95rem;
-            padding: 25px; /* Odstęp tekstu od brzegów kafelka */
+            padding: 25px; 
             margin: 0;
             color: #111;
             text-align: left;
@@ -203,7 +201,7 @@
             font-family: 'Bebas Neue', sans-serif;
             font-size: 1.2rem;
             display: none;
-            animation: fadeInOut 1.5s ease-in-out;
+            z-index: 100;
         }
 
         @keyframes fadeInOut {
@@ -247,22 +245,22 @@
         <div class="card">
             <h3>Wdrożenia ERP</h3>
             <p>
-                Kompleksowe prowadzenie projektów wdrożeniowych systemów klasy ERP, obejmujące pełny cykl życia projektu.<br><br>
-                Zarządzam całym procesem – od wstępnej analizy potrzeb i warsztatów projektowych, aż po finalną stabilizację systemu u klienta.
+                Prowadzę projekty wdrożeniowe systemów ERP od początku do końca.<br><br>
+                Biorę odpowiedzialność za cały proces – od analizy potrzeb i warsztatów, przez realizację, aż po stabilne uruchomienie systemu.
             </p>
         </div>
         <div class="card">
-            <h3>Analiza Procesów</h3>
+            <h3>Analiza procesów</h3>
             <p>
-                Zajmuję się profesjonalnym mapowaniem procesów biznesowych w notacji BPMN oraz ich dogłębną optymalizacją operacyjną.<br><br>
-                Moje działania koncentrują się na realnej redukcji kosztów oraz znacznym zwiększeniu efektywności codziennych działań firmy.
+                Pomagam uporządkować procesy biznesowe i nadać im jasną strukturę.<br><br>
+                Skupiam się na realnych usprawnieniach, które ograniczają chaos, obniżają koszty i ułatwiają codzienną pracę zespołów.
             </p>
         </div>
         <div class="card">
             <h3>Koordynacja IT</h3>
             <p>
-                Skutecznie zarządzam relacjami z dostawcami rozwiązań technologicznych oraz koordynuję pracę zespołów wdrożeniowych.<br><br>
-                Posiadam bogate doświadczenie w prowadzeniu złożonych projektów IT o skali wielooddziałowej, dbając o ich spójną realizację.
+                Koordynuję pracę zespołów wdrożeniowych oraz współpracę z dostawcami technologii.<br><br>
+                Mam doświadczenie w prowadzeniu złożonych projektów IT w organizacjach wielooddziałowych, dbając o spójność, komunikację i dowożenie efektów.
             </p>
         </div>
     </div>
@@ -281,8 +279,10 @@
         navigator.clipboard.writeText(email).then(() => {
             const toast = document.getElementById('copy-toast');
             toast.style.display = 'block';
+            toast.style.animation = 'fadeInOut 1.5s ease-in-out';
             setTimeout(() => {
                 toast.style.display = 'none';
+                toast.style.animation = '';
             }, 1500);
         });
     }
