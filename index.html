@@ -20,42 +20,57 @@
             color: var(--dark); 
         }
 
-        /* NAGŁÓWEK Z TWOIM TŁEM (tlo.png) */
-        header {
-            min-height: 90vh;
+        /* TŁO STRONY Z EFEKTEM KROPEK KOMIKSOWYCH */
+        .page-wrapper {
+            min-height: 100vh;
+            background-image: radial-gradient(var(--red) 15%, transparent 16%);
+            background-size: 20px 20px;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center; 
-            background-image: url('tlo.png'); 
-            background-size: cover;
-            background-position: center;
-            border-bottom: 10px solid black;
-            padding: 40px 20px;
+            position: relative;
         }
 
-        /* BIAŁA RAMKA Z TWOIM ZDJĘCIEM (postac.png) I BIO */
+        /* LOGO W LEWYM GÓRNYM ROGU */
+        .logo-top-left {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            max-width: 250px;
+            z-index: 10;
+            filter: drop-shadow(5px 5px 0px black);
+        }
+
+        header {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px;
+            box-sizing: border-box;
+        }
+
+        /* GŁÓWNA RAMKA BIO */
         .hero-box {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 40px;
+            background: white;
+            padding: 50px 40px;
             border: 6px solid black;
-            box-shadow: 15px 15px 0px var(--blue);
+            box-shadow: 20px 20px 0px var(--blue);
             max-width: 700px;
-            width: 90%;
+            width: 100%;
             text-align: center;
             transform: rotate(1deg);
+            position: relative;
         }
 
-        /* TWOJE ZDJĘCIE (postac.png) */
+        /* ZDJĘCIE PROFILOWE */
         .profile-img {
-            width: 200px;
-            height: 200px;
+            width: 220px;
+            height: 220px;
             object-fit: cover;
             border-radius: 50%;
             border: 6px solid black;
-            margin-bottom: 20px;
-            box-shadow: 5px 5px 0px var(--red);
-            background-color: white;
+            margin-bottom: 25px;
+            box-shadow: 8px 8px 0px var(--red);
         }
 
         h1 { 
@@ -68,19 +83,19 @@
         }
 
         .hero-p { 
-            font-size: 1.25rem; 
+            font-size: 1.3rem; 
             font-weight: 700; 
             margin: 20px 0; 
             color: #111; 
-            line-height: 1.4;
+            line-height: 1.5;
         }
 
         .btn-group { 
             display: flex; 
             justify-content: center; 
-            gap: 15px; 
+            gap: 20px; 
             flex-wrap: wrap; 
-            margin-top: 25px;
+            margin-top: 30px;
         }
 
         .btn { 
@@ -90,7 +105,7 @@
             text-decoration: none; 
             color: white; 
             border: 4px solid black; 
-            box-shadow: 5px 5px 0px black; 
+            box-shadow: 6px 6px 0px black; 
             transition: 0.1s; 
         }
 
@@ -103,94 +118,113 @@
         .services { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 30px; 
+            gap: 40px; 
             padding: 80px 20px; 
             max-width: 1200px; 
             margin: 0 auto; 
+            background: var(--yellow);
         }
 
         .card { 
             background: white; 
-            padding: 35px; 
+            padding: 40px; 
             border: 6px solid black; 
-            box-shadow: 10px 10px 0px black; 
+            box-shadow: 12px 12px 0px black; 
             transition: 0.3s;
         }
 
         .card:hover { 
-            transform: translateY(-8px); 
-            box-shadow: 15px 15px 0px var(--blue);
+            transform: translateY(-10px); 
+            box-shadow: 18px 18px 0px var(--blue);
             border-color: var(--red);
         }
 
         .card h3 { 
             font-family: 'Bangers', cursive; 
-            font-size: 2.4rem; 
+            font-size: 2.5rem; 
             margin-top: 0; 
-            border-bottom: 4px solid var(--yellow);
+            border-bottom: 5px solid var(--yellow);
             display: inline-block;
+            color: black;
         }
 
-        .card p { font-weight: 600; line-height: 1.5; color: #333; }
+        .card p { font-weight: 700; line-height: 1.6; color: #222; font-size: 1.1rem; }
 
         .contact-bar { 
             background: black; 
             color: var(--yellow); 
-            padding: 50px; 
+            padding: 60px 20px; 
             text-align: center; 
             font-family: 'Bangers', cursive; 
-            font-size: 2.2rem; 
+            font-size: 2.4rem; 
         }
 
         footer { 
-            padding: 30px; 
+            padding: 40px; 
             text-align: center; 
             font-weight: 800; 
             background: white; 
             border-top: 6px solid black; 
         }
+
+        /* DOPASOWANIE DLA URZĄDZEŃ MOBILNYCH */
+        @media (max-width: 768px) {
+            .logo-top-left {
+                position: relative;
+                top: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                margin-bottom: -40px;
+            }
+            header { min-height: auto; padding-top: 60px; }
+            h1 { font-size: 2.5rem; }
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="hero-box">
-        <img src="postac.png" alt="Paweł Grabowski" class="profile-img">
-        
-        <h1>Paweł Grabowski</h1>
-        <p class="hero-p">
-            Project Manager z ponad 10-letnim doświadczeniem w projektach ERP i IT. 
-            Ekspert od analizy procesów biznesowych i skutecznych wdrożeń systemowych.
-        </p>
-        <div class="btn-group">
-            <a href="mailto:pawel@itlaunch.net" class="btn btn-mail">✉ NAPISZ DO MNIE!</a>
-            <a href="https://www.linkedin.com/in/pawełgrabowski" target="_blank" class="btn btn-linkedin">LINKEDIN</a>
+<div class="page-wrapper">
+    <img src="logo.png" alt="IT Launch" class="logo-top-left">
+
+    <header>
+        <div class="hero-box">
+            <img src="postac.png" alt="Paweł Grabowski" class="profile-img">
+            
+            <h1>Paweł Grabowski</h1>
+            <p class="hero-p">
+                Project Manager z ponad 10-letnim doświadczeniem w projektach ERP i IT. 
+                Ekspert od analizy procesów biznesowych i skutecznych wdrożeń systemowych.
+            </p>
+            <div class="btn-group">
+                <a href="mailto:pawel@itlaunch.net" class="btn btn-mail">✉ NAPISZ DO MNIE!</a>
+                <a href="https://www.linkedin.com/in/pawełgrabowski" target="_blank" class="btn btn-linkedin">LINKEDIN</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="services">
+        <div class="card">
+            <h3>Wdrożenia ERP</h3>
+            <p>Prowadzenie kompleksowych projektów wdrożeniowych (m.in. Softlab). Od analizy potrzeb, przez planowanie i testy UAT, aż po stabilizację powdrożeniową.</p>
+        </div>
+        <div class="card">
+            <h3>Analiza Procesów</h3>
+            <p>Mapowanie BPMN i optymalizacja procesów biznesowych. Skuteczne przekładanie wymagań operacyjnych na język systemów IT.</p>
+        </div>
+        <div class="card">
+            <h3>Koordynacja IT</h3>
+            <p>Zarządzanie relacjami z dostawcami zewnętrznymi oraz komitetami sterującymi. Doświadczenie w projektach o skali wielooddziałowej.</p>
         </div>
     </div>
-</header>
 
-<div class="services">
-    <div class="card">
-        <h3>Wdrożenia ERP</h3>
-        <p>Prowadzenie projektów (m.in. Softlab) – od analizy przedwdrożeniowej, przez konfigurację, po testy UAT i wsparcie powdrożeniowe.</p>
+    <div class="contact-bar">
+        📧 pawel@itlaunch.net | 📞 +48 606 931 676
     </div>
-    <div class="card">
-        <h3>Analiza Procesów</h3>
-        <p>Mapowanie BPMN i optymalizacja operacyjna. Przekładanie potrzeb biznesu na precyzyjne specyfikacje dla zespołów IT.</p>
-    </div>
-    <div class="card">
-        <h3>Koordynacja IT</h3>
-        <p>Zarządzanie współpracą z dostawcami zewnętrznymi i komitetami sterującymi w projektach o skali wielooddziałowej.</p>
-    </div>
+
+    <footer>
+        © 2026 IT Launch | Paweł Grabowski | Józefosław
+    </footer>
 </div>
-
-<div class="contact-bar">
-    📧 pawel@itlaunch.net | 📞 +48 606 931 676
-</div>
-
-<footer>
-    © 2026 IT Launch | Paweł Grabowski | Józefosław
-</footer>
 
 </body>
 </html>
