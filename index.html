@@ -24,6 +24,7 @@
             overflow-x: hidden;
         }
 
+        /* GŁÓWNY KONTENER */
         .main-wrapper {
             min-height: 100vh;
             background-image: radial-gradient(var(--red) 15%, transparent 16%);
@@ -35,6 +36,7 @@
             position: relative;
         }
 
+        /* LOGO POWIĘKSZONE 2-KROTNIE */
         .header-logo {
             position: absolute;
             top: 10px;
@@ -46,6 +48,7 @@
             z-index: 10;
         }
 
+        /* GŁÓWNA KARTA OBNIŻONA O 1 CM */
         .hero-box {
             background: white;
             padding: 40px 25px 30px 25px;
@@ -58,6 +61,7 @@
             margin-top: 38px; 
         }
 
+        /* ZDJĘCIE PROFILOWE - SKUPIONE NA GŁOWIE */
         .profile-container {
             width: 180px;
             height: 180px;
@@ -121,39 +125,43 @@
             gap: 15px; 
             padding: 20px 10px; 
             max-width: 1200px; 
-            margin: 38px auto 0 auto; /* Dodano margines górny */
+            margin: 38px auto 40px auto; 
         }
 
         .card { 
             background: white; 
-            padding: 20px; 
+            padding: 25px; 
             border: 5px solid black; 
             box-shadow: 8px 8px 0px black; 
+            display: flex;
+            flex-direction: column;
         }
 
         .card h3 { 
             font-family: 'Bangers', cursive; 
             font-size: 2rem; 
-            margin: 0 0 10px 0; 
+            margin: 0 0 15px 0; 
             border-bottom: 4px solid var(--yellow);
             display: inline-block;
         }
 
         .card p {
             font-weight: 700;
-            line-height: 1.3;
+            line-height: 1.4;
             font-size: 0.95rem;
+            margin: 0;
         }
 
         .contact-bar { 
             background: black; 
             color: var(--yellow); 
-            padding: 25px 15px; 
+            padding: 30px 15px; 
             text-align: center; 
             font-family: 'Bangers', cursive; 
             font-size: 1.6rem; 
         }
 
+        /* RESPONSYWNOŚĆ MOBILNA */
         @media (max-width: 768px) {
             .header-logo { position: relative; top: 0; left: 0; align-self: center; max-width: 250px; margin-bottom: 10px; }
             .hero-box { margin-top: 10px; width: 100%; border: none; box-shadow: none; transform: none; }
@@ -186,15 +194,15 @@
     <div class="services">
         <div class="card">
             <h3>Wdrożenia ERP</h3>
-            <p>Prowadzenie projektów ERP (m.in. Softlab) – od analizy warsztatowej po stabilizację powdrożeniową.</p>
+            <p>Oferuję profesjonalne zarządzanie wdrożeniami systemów ERP, dbając o terminowość i zgodność z budżetem. Proces rozpoczynam od rzetelnej analizy warsztatowej, co pozwala na precyzyjne dopasowanie rozwiązań do specyfiki biznesu. Moje wsparcie kończy się dopiero po pełnej stabilizacji powdrożeniowej, gwarantując ciągłość procesów operacyjnych firmy.</p>
         </div>
         <div class="card">
             <h3>Analiza Procesów</h3>
-            <p>Mapowanie BPMN i optymalizacja operacyjna w celu redukcji kosztów i zwiększenia efektywności.</p>
+            <p>Przeprowadzam szczegółową analizę i mapowanie procesów biznesowych (BPMN), identyfikując obszary wymagające usprawnień. Wdrażam optymalizacje operacyjne, które eliminują wąskie gardła i przekładają się na wymierną redukcję kosztów funkcjonowania przedsiębiorstwa. Dzięki mojemu podejściu firma zyskuje wyższą wydajność oraz przejrzystą strukturę obiegu informacji i zadań.</p>
         </div>
         <div class="card">
             <h3>Koordynacja IT</h3>
-            <p>Zarządzanie relacjami z dostawcami i koordynacja pracy zespołów wdrożeniowych w projektach wielooddziałowych.</p>
+            <p>Buduję trwałe i profesjonalne relacje z dostawcami IT, pilnując jakości oraz terminowości dostarczanych przez nich usług. Odpowiadam za sprawną koordynację pracy zespołów wdrożeniowych, zapewniając płynny przepływ komunikacji na każdym etapie projektu. Specjalizuję się w zarządzaniu projektami w strukturach rozproszonych, gwarantując jednolity standard wdrożenia w całej organizacji.</p>
         </div>
     </div>
 </div>
