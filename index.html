@@ -3,33 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Launch | Paweł Grabowski - Ekspert ERP & IT</title>
+    <title>IT Launch | Paweł Grabowski - Project Manager ERP</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #38bdf8; --secondary: #818cf8; --bg: #0f172a; --card: #1e293b; --text: #f1f5f9; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); margin: 0; line-height: 1.6; }
-        header { padding: 100px 20px; text-align: center; background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%); }
-        h1 { font-size: 3.5rem; margin: 0; background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .title { font-size: 1.5rem; color: var(--primary); font-weight: 300; margin-top: 10px; }
-        .hero-p { font-size: 1.1rem; color: #94a3b8; max-width: 700px; margin: 30px auto; }
+        :root { 
+            --bg-dark: #0f172a; 
+            --accent-blue: #0ea5e9; 
+            --accent-purple: #818cf8;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --card-bg: rgba(30, 41, 59, 0.7);
+        }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg-dark); 
+            background-image: radial-gradient(circle at 0% 0%, #1e293b 0%, #0f172a 100%);
+            color: var(--text-main); 
+            margin: 0; 
+            line-height: 1.6; 
+        }
+        header { padding: 120px 20px 60px; text-align: center; }
+        h1 { 
+            font-size: clamp(2.5rem, 8vw, 4rem); 
+            margin: 0; 
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            font-weight: 800;
+        }
+        .title { font-size: 1.5rem; color: var(--accent-blue); letter-spacing: 2px; text-transform: uppercase; margin-top: 10px; font-weight: 300; }
+        .hero-p { font-size: 1.15rem; color: var(--text-dim); max-width: 750px; margin: 30px auto; }
         
-        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; padding: 40px 20px; max-width: 1100px; margin: 0 auto; }
-        .card { background: var(--card); padding: 30px; border-radius: 16px; border: 1px solid #334155; transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        .card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2); }
-        .card h3 { color: var(--primary); margin-top: 0; font-size: 1.4rem; }
+        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
+        .card { 
+            background: var(--card-bg); 
+            padding: 40px; 
+            border-radius: 24px; 
+            border: 1px solid rgba(255,255,255,0.1); 
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+        }
+        .card:hover { transform: translateY(-10px); border-color: var(--accent-blue); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        .card h3 { color: var(--accent-blue); margin-top: 0; font-size: 1.5rem; }
         
-        .contact-section { text-align: center; padding: 80px 20px; background: #111827; }
-        .btn-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 30px; }
+        .btn-group { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 40px; }
+        .btn { 
+            padding: 16px 35px; 
+            border-radius: 50px; 
+            font-weight: 600; 
+            transition: 0.3s; 
+            text-decoration: none; 
+            font-size: 1rem;
+        }
+        .btn-primary { background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); color: white; border: none; }
+        .btn-primary:hover { opacity: 0.9; transform: scale(1.05); }
         
-        .btn { display: inline-block; padding: 16px 32px; border-radius: 12px; font-weight: 700; transition: 0.3s; text-decoration: none; }
-        .btn-primary { background: var(--primary); color: #0f172a; }
-        .btn-primary:hover { background: #7dd3fc; transform: scale(1.05); }
-        
-        .btn-outline { border: 2px solid var(--primary); color: var(--primary); }
-        .btn-outline:hover { background: rgba(56, 189, 248, 0.1); transform: scale(1.05); }
+        .btn-outline { border: 2px solid var(--accent-blue); color: var(--accent-blue); }
+        .btn-outline:hover { background: rgba(14, 165, 233, 0.1); transform: scale(1.05); }
 
-        .contact-info { margin-top: 25px; color: #94a3b8; font-size: 1.1rem; }
-        footer { padding: 40px; text-align: center; font-size: 0.85rem; color: #64748b; border-top: 1px solid #1e293b; }
+        .contact-section { text-align: center; padding: 100px 20px; }
+        .contact-info { margin-top: 30px; font-size: 1.2rem; color: var(--text-main); font-weight: 400; }
+        footer { padding: 50px; text-align: center; font-size: 0.85rem; color: var(--text-dim); border-top: 1px solid rgba(255,255,255,0.05); }
     </style>
 </head>
 <body>
@@ -37,43 +71,41 @@
 <header>
     <h1>IT Launch</h1>
     <div class="title">Paweł Grabowski</div>
-    <p class="hero-p">Project Manager & Analityk z ponad 10-letnim doświadczeniem w projektach ERP i IT. Specjalista od optymalizacji procesów biznesowych i skutecznych wdrożeń systemowych.</p>
+    <p class="hero-p">Ekspert z ponad 10-letnim doświadczeniem w projektach ERP/IT[cite: 6]. Specjalizuję się w wdrożeniach systemów, analizie procesów biznesowych oraz koordynacji zespołów[cite: 7].</p>
     
     <div class="btn-group">
-        <a href="mailto:pawel@itlaunch.net" class="btn btn-primary">Napisz do mnie</a>
-        <a href="www.linkedin.com/in/pawełgrabowski" target="_blank" class="btn btn-outline">Profil LinkedIn</a>
+        <a href="mailto:pawel@itlaunch.net" class="btn btn-primary">Porozmawiajmy o projekcie</a>
+        <a href="https://www.linkedin.com/in/pawełgrabowski" target="_blank" class="btn btn-outline">LinkedIn Profil</a>
     </div>
 </header>
 
 <div class="services">
     <div class="card">
-        <h3>Wdrożenia ERP</h3>
-        <p>Prowadzenie strategicznych projektów (m.in. Softlab). Zarządzanie pełnym cyklem – od analizy potrzeb po stabilizację powdrożeniową w organizacjach wielooddziałowych.</p>
+        <h3>Systemy ERP</h3>
+        <p>Kompleksowe prowadzenie wdrożeń (m.in. Softlab ). Analiza, planowanie, testy UAT oraz pełna stabilizacja systemu w organizacji[cite: 29].</p>
     </div>
     <div class="card">
         <h3>Analiza Procesów</h3>
-        <p>Mapowanie BPMN i optymalizacja operacyjna. Skracanie czasu realizacji procesów oraz precyzyjne definiowanie wymagań biznesowych dla IT.</p>
+        <p>Mapowanie BPMN [cite: 16, 45], identyfikacja wąskich gardeł i optymalizacja operacyjna prowadząca do realnych oszczędności czasowych i kosztowych[cite: 11].</p>
     </div>
     <div class="card">
-        <h3>Zarządzanie Zmianą</h3>
-        <p>Koordynacja zespołów, wsparcie użytkowników końcowych oraz budowanie efektywnej współpracy między dostawcami a biznesem.</p>
+        <h3>Zarządzanie Projektami</h3>
+        <p>Doświadczenie w projektach o skali kilkuset użytkowników[cite: 8, 64]. Koordynacja współpracy między biznesem, działem IT a dostawcami systemów[cite: 30].</p>
     </div>
 </div>
 
 <section class="contact-section">
-    <h2>Zmieńmy technologię w zysk</h2>
-    <p>Skuteczna koordynacja projektów IT i ERP dla Twojej firmy.</p>
+    <h2>Zmieńmy wyzwania w mierzalne efekty</h2>
     <div class="contact-info">
-        📧 pawel@itlaunch.net<br>
-        📞 +48 606 931 676
+        📧 pawel@itlaunch.net [cite: 3]<br>
+        📞 +48 606 931 676 [cite: 3]
     </div>
 </section>
 
 <footer>
-    &copy; 2026 IT Launch | Paweł Grabowski<br>
-    Józefosław | itlaunch.net
+    &copy; 2026 IT Launch | Paweł Grabowski [cite: 2]<br>
+    Józefosław [cite: 4] | itlaunch.net
 </footer>
 
 </body>
 </html>
-
