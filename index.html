@@ -32,134 +32,140 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 40px 20px;
+            padding: 20px; /* Minimalny odstęp od góry */
+            position: relative;
         }
 
-        /* DUŻE I CZYTELNE LOGO */
+        /* LOGO MAKSYMALNIE W LEWO */
         .header-logo {
-            max-width: 450px; /* Bardzo duże logo */
+            align-self: flex-start; /* Przesuwa logo do lewej w flexboxie */
+            max-width: 320px; 
             width: 100%;
             height: auto;
-            margin-bottom: 30px;
-            filter: drop-shadow(8px 8px 0px black);
-            transition: transform 0.3s ease;
-        }
-        .header-logo:hover {
-            transform: scale(1.05) rotate(-2deg);
+            margin-bottom: 10px; /* Mały odstęp pod logiem */
+            filter: drop-shadow(6px 6px 0px black);
+            margin-left: 10px; /* Lekki odstęp od krawędzi ekranu */
         }
 
-        /* GŁÓWNA KARTA */
+        /* GŁÓWNA KARTA PODNIESIONA DO GÓRY */
         .hero-box {
             background: white;
-            padding: 50px 40px;
+            padding: 40px 30px;
             border: 8px solid black;
-            box-shadow: 20px 20px 0px var(--blue);
+            box-shadow: 15px 15px 0px var(--blue);
             max-width: 800px;
             width: 100%;
             text-align: center;
-            transform: rotate(1deg);
-            position: relative;
+            transform: rotate(0.5deg);
+            margin-top: 0; /* Brak marginesu górnego dla podniesienia treści */
         }
 
         /* ZDJĘCIE PROFILOWE - SKUPIONE NA GŁOWIE */
         .profile-container {
-            width: 220px;
-            height: 220px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
-            border: 8px solid black;
-            margin: 0 auto 25px;
+            border: 6px solid black;
+            margin: 0 auto 20px;
             overflow: hidden;
             background: white;
-            box-shadow: 8px 8px 0px var(--red);
+            box-shadow: 6px 6px 0px var(--red);
         }
 
         .profile-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            /* Parametr 0% zapewnia, że głowa nie jest ucięta od góry */
+            /* Parametr zapewnia, że głowa nie jest ucięta od góry */
             object-position: center 0%; 
         }
 
         h1 { 
             font-family: 'Bangers', cursive; 
-            font-size: 3.8rem; 
+            font-size: 3.2rem; 
             color: black; 
             margin: 0; 
             line-height: 1;
+            text-transform: uppercase;
         }
 
         .hero-p { 
-            font-size: 1.35rem; 
+            font-size: 1.2rem; 
             font-weight: 700; 
-            margin: 25px 0; 
+            margin: 20px 0; 
             color: #111; 
-            line-height: 1.5;
+            line-height: 1.4;
         }
 
         .btn-group { 
             display: flex; 
             justify-content: center; 
-            gap: 20px; 
+            gap: 15px; 
             flex-wrap: wrap; 
         }
 
         .btn { 
             font-family: 'Bangers', cursive; 
-            font-size: 1.8rem; 
-            padding: 15px 40px; 
+            font-size: 1.6rem; 
+            padding: 12px 30px; 
             text-decoration: none; 
             color: white; 
             border: 4px solid black; 
-            box-shadow: 6px 6px 0px black; 
+            box-shadow: 5px 5px 0px black; 
             transition: 0.1s; 
         }
 
         .btn-mail { background: var(--blue); }
         .btn-linkedin { background: var(--red); }
-        .btn:hover { transform: translate(-3px, -3px); box-shadow: 9px 9px 0px black; }
+        .btn:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0px black; }
 
         /* SEKCJA USŁUG */
         .services { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-            gap: 30px; 
-            padding: 80px 20px; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 20px; 
+            padding: 40px 20px; 
             max-width: 1200px; 
             margin: 0 auto; 
         }
 
         .card { 
             background: white; 
-            padding: 40px; 
-            border: 6px solid black; 
-            box-shadow: 12px 12px 0px black; 
+            padding: 30px; 
+            border: 5px solid black; 
+            box-shadow: 10px 10px 0px black; 
         }
 
         .card h3 { 
             font-family: 'Bangers', cursive; 
-            font-size: 2.5rem; 
+            font-size: 2.2rem; 
             margin-top: 0; 
-            border-bottom: 6px solid var(--yellow);
+            border-bottom: 5px solid var(--yellow);
             display: inline-block;
         }
 
-        /* STOPKA */
+        .card p {
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        /* STOPKA KONTAKTOWA */
         .contact-bar { 
             background: black; 
             color: var(--yellow); 
-            padding: 60px 20px; 
+            padding: 40px 20px; 
             text-align: center; 
             font-family: 'Bangers', cursive; 
-            font-size: 2.2rem; 
+            font-size: 1.8rem; 
+            border-top: 8px solid black;
         }
 
         /* RWD DLA TELEFONÓW */
         @media (max-width: 768px) {
-            .header-logo { max-width: 300px; }
-            h1 { font-size: 2.8rem; }
-            .hero-box { padding: 30px 20px; }
-            .profile-container { width: 180px; height: 180px; }
+            .header-logo { align-self: center; margin-left: 0; max-width: 250px; }
+            h1 { font-size: 2.4rem; }
+            .hero-box { padding: 25px 15px; }
+            .profile-container { width: 160px; height: 160px; }
         }
     </style>
 </head>
@@ -175,8 +181,8 @@
         
         <h1>Paweł Grabowski</h1>
         <p class="hero-p">
-            Project Manager z ponad 10-letnim doświadczeniem w projektach ERP i IT[cite: 6]. 
-            Ekspert od analizy procesów biznesowych i skutecznych wdrożeń systemowych[cite: 7].
+            Project Manager z ponad 10-letnim doświadczeniem w projektach ERP i IT. 
+            Ekspert od analizy procesów biznesowych i skutecznych wdrożeń systemowych.
         </p>
         
         <div class="btn-group">
@@ -188,27 +194,25 @@
     <div class="services">
         <div class="card">
             <h3>Wdrożenia ERP</h3>
-            <p>Prowadzenie strategicznych projektów ERP (m.in. Softlab) – od analizy przedwdrożeniowej po stabilizację[cite: 23, 29].</p>
+            <p>Prowadzenie projektów ERP (m.in. Softlab) – od analizy warsztatowej po stabilizację powdrożeniową.</p>
         </div>
         <div class="card">
             <h3>Analiza Procesów</h3>
-            <p>Mapowanie BPMN i optymalizacja operacyjna w celu redukcji kosztów i skrócenia czasu realizacji[cite: 16, 18].</p>
+            <p>Mapowanie BPMN i optymalizacja operacyjna w celu redukcji kosztów i zwiększenia efektywności.</p>
         </div>
         <div class="card">
             <h3>Koordynacja IT</h3>
-            <p>Zarządzanie relacjami z dostawcami systemów i koordynacja pracy zespołów wdrożeniowych[cite: 30, 37].</p>
+            <p>Zarządzanie relacjami z dostawcami i koordynacja pracy zespołów wdrożeniowych w projektach wielooddziałowych.</p>
         </div>
     </div>
 </div>
 
 <div class="contact-bar">
-    📧 pawel@itlaunch.net | 📞 606 931 676 [cite: 3]
+    📧 pawel@itlaunch.net | 📞 606 931 676
 </div>
 
-<footer>
-    <div style="text-align: center; padding: 20px; font-weight: 800;">
-        © 2026 IT Launch | Józefosław [cite: 4]
-    </div>
+<footer style="background: white; text-align: center; padding: 20px; font-weight: 800; border-top: 4px solid black;">
+    © 2026 IT Launch | Józefosław
 </footer>
 
 </body>
