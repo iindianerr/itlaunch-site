@@ -119,11 +119,12 @@
 
         .services { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
             gap: 20px; 
             padding: 20px 10px; 
             max-width: 1200px; 
             margin: 38px auto 60px auto; 
+            width: 100%;
         }
 
         .card { 
@@ -133,6 +134,7 @@
             box-shadow: 8px 8px 0px black; 
             text-align: center;
             overflow: hidden;
+            height: fit-content;
         }
 
         .card h3 { 
@@ -166,6 +168,7 @@
             justify-content: center;
             margin-bottom: 50px;
             position: relative;
+            padding: 0 20px;
         }
 
         .contact-bar { 
@@ -184,6 +187,8 @@
             align-items: center;
             gap: 10px;
             transition: transform 0.1s;
+            max-width: 100%;
+            word-break: break-all;
         }
 
         .contact-bar:active {
@@ -211,12 +216,36 @@
             100% { opacity: 0; transform: translateY(-10px); }
         }
 
+        /* POPRAWKI DLA URZĄDZEŃ MOBILNYCH */
         @media (max-width: 768px) {
-            .header-logo { position: relative; top: 0; left: 0; align-self: center; max-width: 250px; margin-bottom: 10px; }
-            .hero-box { margin-top: 10px; width: 100%; border: none; box-shadow: none; transform: none; }
-            h1 { font-size: 3rem; }
-            .card h3 { font-size: 2rem; }
-            .contact-bar { font-size: 1.4rem; padding: 10px 25px; }
+            .header-logo { 
+                position: relative; 
+                top: 0; 
+                left: 0; 
+                align-self: center; 
+                max-width: 280px; 
+                margin: 20px 0;
+                filter: drop-shadow(4px 4px 0px black);
+            }
+            .hero-box { 
+                margin-top: 0; 
+                width: 90%; 
+                padding: 20px 15px;
+                border: 6px solid black;
+                box-shadow: 8px 8px 0px var(--blue);
+                transform: none;
+            }
+            h1 { font-size: 2.8rem; }
+            .profile-container { width: 140px; height: 140px; }
+            .hero-p { font-size: 1rem; }
+            .services { 
+                grid-template-columns: 1fr; 
+                margin-top: 20px;
+                padding: 0 15px;
+            }
+            .card h3 { font-size: 2rem; padding: 10px; }
+            .card p { padding: 15px; font-size: 0.9rem; }
+            .contact-bar { font-size: 1.2rem; padding: 10px 20px; }
         }
     </style>
 </head>
