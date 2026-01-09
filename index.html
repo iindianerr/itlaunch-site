@@ -20,55 +20,67 @@
             color: var(--dark); 
         }
 
-        /* NAGŁÓWEK Z TWOIM KOMPLETNYM ZDJĘCIEM */
+        /* NAGŁÓWEK Z TWOIM TŁEM (tlo.png) */
         header {
-            min-height: 80vh;
+            min-height: 90vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-end; 
-            background-image: url('tlo.png'); /* TWOJA GRAFIKA Z LOGO I POSTACIĄ */
+            justify-content: center; 
+            background-image: url('tlo.png'); 
             background-size: cover;
             background-position: center;
             border-bottom: 10px solid black;
-            padding-bottom: 50px;
+            padding: 40px 20px;
         }
 
-        /* RAMKA Z TWOIM BIO */
+        /* BIAŁA RAMKA Z TWOIM ZDJĘCIEM (postac.png) I BIO */
         .hero-box {
             background: rgba(255, 255, 255, 0.95);
-            padding: 25px;
+            padding: 40px;
             border: 6px solid black;
-            box-shadow: 12px 12px 0px var(--blue);
-            max-width: 750px;
+            box-shadow: 15px 15px 0px var(--blue);
+            max-width: 700px;
             width: 90%;
             text-align: center;
-            transform: rotate(-1deg);
+            transform: rotate(1deg);
+        }
+
+        /* TWOJE ZDJĘCIE (postac.png) */
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid black;
+            margin-bottom: 20px;
+            box-shadow: 5px 5px 0px var(--red);
+            background-color: white;
         }
 
         h1 { 
             font-family: 'Bangers', cursive; 
-            font-size: 3.2rem; 
+            font-size: 3.5rem; 
             color: black; 
             margin: 0; 
             text-transform: uppercase;
+            line-height: 1;
         }
 
         .hero-p { 
             font-size: 1.25rem; 
             font-weight: 700; 
-            margin: 15px 0; 
+            margin: 20px 0; 
             color: #111; 
             line-height: 1.4;
         }
 
-        /* PRZYCISKI KONTAKTOWE */
         .btn-group { 
             display: flex; 
             justify-content: center; 
             gap: 15px; 
             flex-wrap: wrap; 
-            margin-top: 20px;
+            margin-top: 25px;
         }
 
         .btn { 
@@ -84,16 +96,15 @@
 
         .btn-mail { background: var(--blue); }
         .btn-linkedin { background: var(--red); }
-
         .btn:hover { transform: scale(1.05); }
         .btn:active { transform: translate(4px, 4px); box-shadow: 0px 0px 0px black; }
 
-        /* SEKCJA USŁUG NA PODSTAWIE DOŚWIADCZENIA */
+        /* SEKCJA USŁUG */
         .services { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
             gap: 30px; 
-            padding: 60px 20px; 
+            padding: 80px 20px; 
             max-width: 1200px; 
             margin: 0 auto; 
         }
@@ -116,22 +127,16 @@
             font-family: 'Bangers', cursive; 
             font-size: 2.4rem; 
             margin-top: 0; 
-            color: black; 
             border-bottom: 4px solid var(--yellow);
             display: inline-block;
         }
 
-        .card p {
-            font-weight: 600;
-            line-height: 1.5;
-            color: #333;
-        }
+        .card p { font-weight: 600; line-height: 1.5; color: #333; }
 
-        /* CZARNY PASEK KONTAKTOWY */
         .contact-bar { 
             background: black; 
             color: var(--yellow); 
-            padding: 40px; 
+            padding: 50px; 
             text-align: center; 
             font-family: 'Bangers', cursive; 
             font-size: 2.2rem; 
@@ -150,10 +155,12 @@
 
 <header>
     <div class="hero-box">
+        <img src="postac.png" alt="Paweł Grabowski" class="profile-img">
+        
         <h1>Paweł Grabowski</h1>
         <p class="hero-p">
-            Project Manager z ponad 10-letnim doświadczeniem w projektach ERP i IT[cite: 6]. 
-            Ekspert od analizy procesów biznesowych i skutecznych wdrożeń systemowych[cite: 7, 51].
+            Project Manager z ponad 10-letnim doświadczeniem w projektach ERP i IT. 
+            Ekspert od analizy procesów biznesowych i skutecznych wdrożeń systemowych.
         </p>
         <div class="btn-group">
             <a href="mailto:pawel@itlaunch.net" class="btn btn-mail">✉ NAPISZ DO MNIE!</a>
@@ -165,24 +172,24 @@
 <div class="services">
     <div class="card">
         <h3>Wdrożenia ERP</h3>
-        <p>Kompleksowe prowadzenie projektów (m.in. Softlab) – od analizy warsztatowej po testy UAT i stabilizację[cite: 23, 29, 33].</p>
+        <p>Prowadzenie projektów (m.in. Softlab) – od analizy przedwdrożeniowej, przez konfigurację, po testy UAT i wsparcie powdrożeniowe.</p>
     </div>
     <div class="card">
-        <h3>Analiza BPMN</h3>
-        <p>Mapowanie procesów biznesowych i optymalizacja operacyjna w celu redukcji kosztów i skrócenia czasu realizacji[cite: 16, 18, 45].</p>
+        <h3>Analiza Procesów</h3>
+        <p>Mapowanie BPMN i optymalizacja operacyjna. Przekładanie potrzeb biznesu na precyzyjne specyfikacje dla zespołów IT.</p>
     </div>
     <div class="card">
-        <h3>Zarządzanie IT</h3>
-        <p>Koordynacja współpracy między biznesem a dostawcami systemów. Doświadczenie w projektach wielooddziałowych[cite: 8, 30, 75].</p>
+        <h3>Koordynacja IT</h3>
+        <p>Zarządzanie współpracą z dostawcami zewnętrznymi i komitetami sterującymi w projektach o skali wielooddziałowej.</p>
     </div>
 </div>
 
 <div class="contact-bar">
-    📧 pawel@itlaunch.net | 📞 +48 606 931 676 
+    📧 pawel@itlaunch.net | 📞 +48 606 931 676
 </div>
 
 <footer>
-    © 2026 IT Launch | Paweł Grabowski | Józefosław [cite: 2, 4]
+    © 2026 IT Launch | Paweł Grabowski | Józefosław
 </footer>
 
 </body>
