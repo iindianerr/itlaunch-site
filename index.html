@@ -24,7 +24,6 @@
             overflow-x: hidden;
         }
 
-        /* GŁÓWNY KONTENER */
         .main-wrapper {
             min-height: 100vh;
             background-image: radial-gradient(var(--red) 15%, transparent 16%);
@@ -36,19 +35,17 @@
             position: relative;
         }
 
-        /* LOGO POWIĘKSZONE 2-KROTNIE I PRZESUNIĘTE W LEWO */
         .header-logo {
             position: absolute;
             top: 10px;
             left: 10px;
-            max-width: 500px; /* Powiększone z 250px */
+            max-width: 500px; 
             width: 100%;
             height: auto;
             filter: drop-shadow(8px 8px 0px black);
             z-index: 10;
         }
 
-        /* GŁÓWNA KARTA OBNIŻONA O 1 CM (ok. 38px) */
         .hero-box {
             background: white;
             padding: 40px 25px 30px 25px;
@@ -58,10 +55,9 @@
             width: 95%;
             text-align: center;
             transform: rotate(0.5deg);
-            margin-top: 38px; /* Obniżenie o ok. 1 cm */
+            margin-top: 38px; 
         }
 
-        /* ZDJĘCIE PROFILOWE - GŁOWA NA GÓRZE */
         .profile-container {
             width: 180px;
             height: 180px;
@@ -118,14 +114,14 @@
         .btn-mail { background: var(--blue); }
         .btn-linkedin { background: var(--red); }
 
-        /* SEKCJA USŁUG */
+        /* SEKCJA USŁUG - PRZESUNIĘTA O 1CM W DÓŁ */
         .services { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
             gap: 15px; 
             padding: 20px 10px; 
             max-width: 1200px; 
-            margin: 0 auto; 
+            margin: 38px auto 0 auto; /* Dodano margines górny */
         }
 
         .card { 
@@ -149,7 +145,6 @@
             font-size: 0.95rem;
         }
 
-        /* PASEK KONTAKTOWY */
         .contact-bar { 
             background: black; 
             color: var(--yellow); 
@@ -159,7 +154,6 @@
             font-size: 1.6rem; 
         }
 
-        /* RESPONSYWNOŚĆ MOBILNA */
         @media (max-width: 768px) {
             .header-logo { position: relative; top: 0; left: 0; align-self: center; max-width: 250px; margin-bottom: 10px; }
             .hero-box { margin-top: 10px; width: 100%; border: none; box-shadow: none; transform: none; }
