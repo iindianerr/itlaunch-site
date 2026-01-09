@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IT Launch | Paweł Grabowski</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root { 
             --yellow: #FFD700; 
@@ -25,7 +25,6 @@
             overflow-x: hidden;
         }
 
-        /* GŁÓWNY KONTENER */
         .main-wrapper {
             min-height: 100vh;
             display: flex;
@@ -35,7 +34,6 @@
             position: relative;
         }
 
-        /* LOGO POWIĘKSZONE 2-KROTNIE W LEWYM ROGU */
         .header-logo {
             position: absolute;
             top: 10px;
@@ -47,7 +45,6 @@
             z-index: 10;
         }
 
-        /* GŁÓWNA KARTA OBNIŻONA O 1 CM */
         .hero-box {
             background: white;
             padding: 40px 25px 30px 25px;
@@ -60,7 +57,6 @@
             margin-top: 38px; 
         }
 
-        /* ZDJĘCIE PROFILOWE */
         .profile-container {
             width: 180px;
             height: 180px;
@@ -79,9 +75,7 @@
             object-position: center 0%; 
         }
 
-        /* IMIĘ I NAZWISKO - CZYTELNE ROBOTO */
         h1 { 
-            font-family: 'Roboto', sans-serif; 
             font-weight: 900;
             font-size: 3.2rem; 
             color: black; 
@@ -107,7 +101,6 @@
         }
 
         .btn { 
-            font-family: 'Roboto', sans-serif;
             font-weight: 700;
             font-size: 1.3rem; 
             padding: 12px 30px; 
@@ -122,7 +115,6 @@
         .btn-mail { background: var(--blue); }
         .btn-linkedin { background: var(--red); }
 
-        /* SEKCJA USŁUG */
         .services { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
@@ -140,7 +132,6 @@
         }
 
         .card h3 { 
-            font-family: 'Roboto', sans-serif; 
             font-weight: 700;
             font-size: 1.8rem; 
             margin: 0 0 15px 0; 
@@ -150,7 +141,6 @@
         }
 
         .card p {
-            font-family: 'Roboto', sans-serif;
             font-weight: 400;
             line-height: 1.5;
             font-size: 1rem;
@@ -163,13 +153,11 @@
             color: white; 
             padding: 30px 15px; 
             text-align: center; 
-            font-family: 'Roboto', sans-serif; 
             font-weight: 700;
             font-size: 1.4rem; 
             text-transform: uppercase;
         }
 
-        /* RESPONSYWNOŚĆ MOBILNA */
         @media (max-width: 768px) {
             .header-logo { position: relative; top: 0; left: 0; align-self: center; max-width: 250px; margin-bottom: 10px; }
             .hero-box { margin-top: 10px; width: 100%; border: none; box-shadow: none; transform: none; }
@@ -202,15 +190,24 @@
     <div class="services">
         <div class="card">
             <h3>Wdrożenia ERP</h3>
-            <p>Kompleksowe prowadzenie projektów wdrożeniowych systemów klasy ERP, obejmujące pełny cykl życia projektu. Zarządzam całym procesem – od wstępnej analizy potrzeb i warsztatów projektowych, aż po finalną stabilizację systemu u klienta.</p>
+            <p>
+                Kompleksowe prowadzenie projektów wdrożeniowych systemów klasy ERP, obejmujące pełny cykl życia projektu.<br><br>
+                Zarządzam całym procesem – od wstępnej analizy potrzeb i warsztatów projektowych, aż po finalną stabilizację systemu u klienta.
+            </p>
         </div>
         <div class="card">
             <h3>Analiza Procesów</h3>
-            <p>Zajmuję się profesjonalnym mapowaniem procesów biznesowych w notacji BPMN oraz ich dogłębną optymalizacją operacyjną. Moje działania koncentrują się na realnej redukcji kosztów oraz znacznym zwiększeniu efektywności codziennych działań firmy.</p>
+            <p>
+                Zajmuję się profesjonalnym mapowaniem procesów biznesowych w notacji BPMN oraz ich dogłębną optymalizacją operacyjną.<br><br>
+                Moje działania koncentrują się na realnej redukcji kosztów oraz znacznym zwiększeniu efektywności codziennych działań firmy.
+            </p>
         </div>
         <div class="card">
             <h3>Koordynacja IT</h3>
-            <p>Skutecznie zarządzam relacjami z dostawcami rozwiązań technologicznych oraz koordynuję pracę zespołów wdrożeniowych. Posiadam bogate doświadczenie w prowadzeniu złożonych projektów IT o skali wielooddziałowej, dbając o ich spójną realizację.</p>
+            <p>
+                Skutecznie zarządzam relacjami z dostawcami rozwiązań technologicznych oraz koordynuję pracę zespołów wdrożeniowych.<br><br>
+                Posiadam bogate doświadczenie w prowadzeniu złożonych projektów IT o skali wielooddziałowej, dbając o ich spójną realizację.
+            </p>
         </div>
     </div>
 </div>
