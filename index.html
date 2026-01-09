@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IT Launch | Paweł Grabowski</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&family=Bebas+Neue&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&family=Bebas+Neue&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root { 
             --yellow: #FFD700; 
@@ -120,10 +120,10 @@
         .services { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 15px; 
+            gap: 20px; 
             padding: 20px 10px; 
             max-width: 1200px; 
-            margin: 38px auto 40px auto; 
+            margin: 38px auto 60px auto; 
         }
 
         .card { 
@@ -131,41 +131,58 @@
             padding: 25px; 
             border: 5px solid black; 
             box-shadow: 8px 8px 0px black; 
-            text-align: center; /* Wyśrodkowanie zawartości kafelka */
+            text-align: center;
         }
 
-        /* NAGŁÓWKI WYŚRODKOWANE */
+        /* NAGŁÓWKI Z ŻÓŁTYM TŁEM (zgodnie z ramką na zdjęciu) */
         .card h3 { 
             font-family: 'Bebas Neue', sans-serif; 
             font-weight: 400;
             font-size: 2.4rem; 
             margin: 0 auto 15px auto; 
-            border-bottom: 5px solid var(--yellow);
+            background-color: var(--yellow); /* Tło pod napisem */
+            padding: 0 10px;
             display: inline-block;
             text-transform: uppercase;
             letter-spacing: 1px;
-            line-height: 1;
-            text-align: center;
+            line-height: 1.2;
+            border: 4px solid black; /* Obramowanie nagłówka dla stylu komiksowego */
         }
 
+        /* OPISY: INTER, POGRUBIONE DO 500 */
         .card p {
             font-family: 'Inter', sans-serif;
-            font-weight: 400;
+            font-weight: 500; /* Troszeczkę grubiej */
             line-height: 1.6;
             font-size: 0.95rem;
             margin: 0;
-            color: #222;
-            text-align: left; /* Tekst opisu zostaje do lewej dla lepszej czytelności */
+            color: #111;
+            text-align: left;
+        }
+
+        /* FLOATING BAR (OPCJA 2) */
+        .contact-bar-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
         }
 
         .contact-bar { 
-            background: black; 
-            color: white; 
-            padding: 30px 15px; 
+            background: white; 
+            color: black; 
+            padding: 15px 40px; 
             text-align: center; 
             font-family: 'Bebas Neue', sans-serif; 
             font-size: 1.8rem; 
             letter-spacing: 1px;
+            border: 5px solid black;
+            border-radius: 50px;
+            box-shadow: 8px 8px 0px black;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
         }
 
         @media (max-width: 768px) {
@@ -173,6 +190,7 @@
             .hero-box { margin-top: 10px; width: 100%; border: none; box-shadow: none; transform: none; }
             h1 { font-size: 2.2rem; }
             .card h3 { font-size: 2rem; }
+            .contact-bar { font-size: 1.4rem; padding: 10px 25px; }
         }
     </style>
 </head>
@@ -220,10 +238,12 @@
             </p>
         </div>
     </div>
-</div>
 
-<div class="contact-bar">
-    📧 pawel@itlaunch.net | 📞 606 931 676
+    <div class="contact-bar-container">
+        <a href="mailto:pawel@itlaunch.net" class="contact-bar">
+            📧 pawel@itlaunch.net
+        </a>
+    </div>
 </div>
 
 </body>
