@@ -21,79 +21,77 @@
             height: 100%;
             font-family: 'Inter', sans-serif;
             background-color: var(--yellow);
-            overflow: hidden; /* Zachowanie układu bez przewijania */
+            /* Na komputerze blokujemy przewijanie, na telefonie pozwalamy */
+            overflow-x: hidden;
         }
 
-        /* GÓRNY PASEK NAWIGACJI */
+        /* GÓRNY PASEK */
         .top-nav {
             background: white;
             height: 60px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 40px;
+            padding: 0 20px;
             border-bottom: 4px solid black;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .nav-logo { height: 40px; }
+        .nav-logo { height: 35px; }
 
-        /* GŁÓWNY KONTENER Z TŁEM KOMIKSOWYM */
         .main-wrapper {
-            height: calc(100vh - 60px);
+            min-height: calc(100vh - 60px);
             background-image: radial-gradient(var(--red) 15%, transparent 16%);
             background-size: 20px 20px;
             display: flex;
             flex-direction: column;
-            padding: 20px 40px;
-            justify-content: center;
+            padding: 20px;
+            align-items: center;
         }
 
         .hero-title {
             font-family: 'Bangers', cursive;
-            font-size: 4rem;
+            font-size: clamp(2.5rem, 8vw, 4rem);
             color: black;
-            margin-bottom: 20px;
-            text-shadow: 4px 4px 0px white;
+            margin: 10px 0 20px 0;
+            text-shadow: 3px 3px 0px white;
+            text-align: center;
         }
 
-        /* UKŁAD KAFELKOWY (BENTO GRID) */
+        /* UKŁAD KAFELKOWY */
         .bento-grid {
             display: grid;
             grid-template-columns: 1.2fr 1fr;
-            grid-template-rows: repeat(3, 140px);
             gap: 20px;
-            max-width: 1200px;
+            max-width: 1100px;
             width: 100%;
-            margin: 0 auto;
+            margin-bottom: 40px;
         }
 
         .card {
             background: white;
             border: 5px solid black;
             box-shadow: 8px 8px 0px black;
-            padding: 20px;
+            padding: 25px;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
-        /* KAFELEK PROFILOWY (PO LEWEJ) */
         .profile-card {
             grid-row: span 3;
             text-align: center;
-            display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: space-around;
         }
 
         .profile-card h2 {
             font-family: 'Bangers', cursive;
-            font-size: 3rem;
+            font-size: 2.8rem;
             margin: 0;
         }
 
-        /* KÓŁKO ZE ZDJĘCIEM - KLUCZOWE DOPASOWANIE GŁOWY */
         .image-circle {
             width: 180px;
             height: 180px;
@@ -101,85 +99,93 @@
             border: 6px solid var(--blue);
             overflow: hidden;
             background: white;
-            position: relative;
+            margin: 15px 0;
         }
 
         .image-circle img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            /* Przesunięcie zdjęcia w dół, aby cała głowa była widoczna */
             object-position: center 5%; 
         }
 
         .profile-bio {
             font-weight: 700;
-            font-size: 1.1rem;
-            margin: 15px 0;
+            font-size: 1.05rem;
+            line-height: 1.4;
         }
 
-        /* PRZYCISKI */
         .btn-row {
             display: flex;
             gap: 10px;
             width: 100%;
+            margin-top: 15px;
         }
 
         .btn {
             flex: 1;
             font-family: 'Bangers', cursive;
-            padding: 10px;
+            padding: 12px;
             text-decoration: none;
             color: white;
             text-align: center;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             border: 3px solid black;
             box-shadow: 4px 4px 0px black;
+            transition: 0.1s;
         }
 
         .btn-mail { background: var(--blue); }
         .btn-li { background: var(--red); }
+        .btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px black; }
 
-        /* KAFELKI USŁUG (PO PRAWEJ) */
         .service-card h3 {
             font-family: 'Bangers', cursive;
             font-size: 1.8rem;
             margin: 0 0 5px 0;
             color: black;
+            border-bottom: 3px solid var(--yellow);
+            display: inline-block;
         }
 
         .service-card p {
             font-weight: 700;
             font-size: 0.95rem;
-            margin: 0;
-            line-height: 1.3;
+            margin-top: 5px;
         }
 
-        /* PASEK KONTAKTU NA DOLE */
+        /* STOPKA KONTAKTOWA */
         .contact-footer {
             background: black;
             color: var(--yellow);
-            padding: 20px 40px;
+            padding: 25px;
+            text-align: center;
             font-family: 'Bangers', cursive;
-            font-size: 1.8rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            font-size: 1.5rem;
             border-top: 5px solid black;
         }
 
-        .footer-link {
-            color: white;
-            font-size: 1rem;
-            font-family: 'Inter', sans-serif;
-            text-decoration: none;
-        }
+        /* MEDIA QUERIES - MAGIA DLA TELEFONÓW */
+        @media (max-width: 850px) {
+            body { overflow-y: auto; } /* Pozwalamy na przewijanie */
+            
+            .bento-grid {
+                grid-template-columns: 1fr; /* Jedna kolumna zamiast dwóch */
+                grid-template-rows: auto;
+            }
 
-        /* RESPONSYWNOŚĆ DLA MAŁYCH EKRANÓW */
-        @media (max-height: 800px) {
-            .bento-grid { grid-template-rows: repeat(3, 110px); }
-            .image-circle { width: 140px; height: 140px; }
-            .hero-title { font-size: 2.5rem; }
+            .profile-card {
+                grid-row: auto;
+                padding: 40px 20px;
+            }
+
+            .top-nav div { display: none; } /* Ukrywamy tekst w navi na małym ekranie */
+            
+            .contact-footer {
+                font-size: 1.2rem;
+                flex-direction: column;
+                gap: 10px;
+            }
         }
     </style>
 </head>
@@ -187,7 +193,7 @@
 
     <nav class="top-nav">
         <img src="logo.png" alt="IT Launch" class="nav-logo">
-        <div style="font-weight: 800;">Project Manager ERP | Analityk IT</div>
+        <div style="font-weight: 800;">PAWEŁ GRABOWSKI | PROJECT MANAGER ERP</div>
     </nav>
 
     <div class="main-wrapper">
@@ -200,36 +206,37 @@
                     <img src="postac.png" alt="Paweł Grabowski">
                 </div>
                 <p class="profile-bio">
-                    Ponad 10 lat doświadczenia we wdrożeniach ERP i IT. 
-                    Ekspert od analizy procesów i skutecznych systemów.
+                    Ponad 10 lat doświadczenia we wdrożeniach ERP i IT[cite: 6]. 
+                    Specjalizuję się w analizie procesów i zarządzaniu zespołami[cite: 7].
                 </p>
                 <div class="btn-row">
-                    <a href="mailto:pawel@itlaunch.net" class="btn btn-mail">✉ NAPISZ DO MNIE!</a>
+                    <a href="mailto:pawel@itlaunch.net" class="btn btn-mail">✉ KONTAKT</a>
                     <a href="https://www.linkedin.com/in/pawełgrabowski" target="_blank" class="btn btn-li">LINKEDIN</a>
                 </div>
             </div>
 
             <div class="card service-card">
                 <h3>Wdrożenia ERP</h3>
-                <p>Prowadzenie projektów (m.in. Softlab) – od analizy warsztatowej po stabilizację.</p>
+                <p>Kompleksowe prowadzenie projektów (m.in. Softlab) – od analizy po stabilizację[cite: 23, 29].</p>
             </div>
 
             <div class="card service-card">
-                <h3>Analiza Procesów</h3>
-                <p>Mapowanie BPMN i optymalizacja operacyjna zwiększająca zyski firmy.</p>
+                <h3>Analiza BPMN</h3>
+                <p>Mapowanie i optymalizacja procesów biznesowych[cite: 16, 45].</p>
             </div>
 
             <div class="card service-card">
                 <h3>Koordynacja IT</h3>
-                <p>Zarządzanie relacjami z dostawcami i koordynacja projektów wielooddziałowych.</p>
+                <p>Zarządzanie relacjami z dostawcami i koordynacja projektów wielooddziałowych[cite: 30, 75].</p>
             </div>
         </div>
     </div>
 
     <div class="contact-footer">
-        DANE KONTAKTOWE:
-        <span style="font-size: 1.4rem;">📧 pawel@itlaunch.net | 📞 606 931 676</span>
-        <a href="https://itlaunch.net" class="footer-link">www.itlaunch.net</a>
+        📧 pawel@itlaunch.net | 📞 606 931 676
+        <div style="font-family: 'Inter'; font-size: 0.8rem; margin-top: 10px; opacity: 0.7;">
+            © 2026 IT LAUNCH | JÓZEFOSŁAW [cite: 4]
+        </div>
     </div>
 
 </body>
