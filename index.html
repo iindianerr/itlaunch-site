@@ -24,7 +24,7 @@
             overflow-x: hidden;
         }
 
-        /* GŁÓWNY KONTENER - ZERO ODSTĘPU OD GÓRY */
+        /* GŁÓWNY KONTENER */
         .main-wrapper {
             min-height: 100vh;
             background-image: radial-gradient(var(--red) 15%, transparent 16%);
@@ -32,23 +32,23 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 0; /* Całkowite usunięcie paddingu górnego */
+            padding: 0;
             position: relative;
         }
 
-        /* LOGO - POZYCJA ABSOLUTNA, BY NIE SPYCHAŁO ŚRODKA */
+        /* LOGO POWIĘKSZONE 2-KROTNIE I PRZESUNIĘTE W LEWO */
         .header-logo {
             position: absolute;
             top: 10px;
             left: 10px;
-            max-width: 250px; 
+            max-width: 500px; /* Powiększone z 250px */
             width: 100%;
             height: auto;
-            filter: drop-shadow(6px 6px 0px black);
-            z-index: 10; /* Logo nad kartą */
+            filter: drop-shadow(8px 8px 0px black);
+            z-index: 10;
         }
 
-        /* GŁÓWNA KARTA - PRZYKLEJONA DO GÓRNEJ KRAWĘDZI */
+        /* GŁÓWNA KARTA OBNIŻONA O 1 CM (ok. 38px) */
         .hero-box {
             background: white;
             padding: 40px 25px 30px 25px;
@@ -58,11 +58,10 @@
             width: 95%;
             text-align: center;
             transform: rotate(0.5deg);
-            margin-top: 0; /* Maksymalne podniesienie */
-            border-top: none; /* Opcjonalnie: usuwa górną ramkę, by stykała się z krawędzią przeglądarki */
+            margin-top: 38px; /* Obniżenie o ok. 1 cm */
         }
 
-        /* ZDJĘCIE PROFILOWE - SKUPIONE NA GŁOWIE */
+        /* ZDJĘCIE PROFILOWE - GŁOWA NA GÓRZE */
         .profile-container {
             width: 180px;
             height: 180px;
@@ -78,7 +77,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            /* Wymuszenie widoczności całej głowy */
             object-position: center 0%; 
         }
 
@@ -161,11 +159,11 @@
             font-size: 1.6rem; 
         }
 
-        /* DOPASOWANIE MOBILNE */
+        /* RESPONSYWNOŚĆ MOBILNA */
         @media (max-width: 768px) {
-            .header-logo { position: relative; top: 0; left: 0; align-self: center; max-width: 200px; margin-bottom: 10px; }
+            .header-logo { position: relative; top: 0; left: 0; align-self: center; max-width: 250px; margin-bottom: 10px; }
+            .hero-box { margin-top: 10px; width: 100%; border: none; box-shadow: none; transform: none; }
             h1 { font-size: 2.2rem; }
-            .hero-box { width: 100%; border: none; box-shadow: none; transform: none; }
         }
     </style>
 </head>
@@ -181,7 +179,7 @@
         
         <h1>Paweł Grabowski</h1>
         <p class="hero-p">
-            Project Manager z ponad 10-letnim doświadczeniem w projektach ERP i IT. 
+            Project Manager z ponad 10-letnim doświadczeniem w projektach ERP i IT.
             Ekspert od analizy procesów biznesowych i skutecznych wdrożeń systemowych.
         </p>
         
