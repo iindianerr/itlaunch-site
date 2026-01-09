@@ -20,15 +20,13 @@
             padding: 0;
             min-height: 100vh;
             font-family: 'Inter', sans-serif;
-            background-color: var(--yellow);
+            background-color: var(--yellow); /* Czyste żółte tło bez kropek */
             overflow-x: hidden;
         }
 
         /* GŁÓWNY KONTENER */
         .main-wrapper {
             min-height: 100vh;
-            background-image: radial-gradient(var(--red) 15%, transparent 16%);
-            background-size: 20px 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -61,7 +59,7 @@
             margin-top: 38px; 
         }
 
-        /* ZDJĘCIE PROFILOWE - SKUPIONE NA GŁOWIE */
+        /* ZDJĘCIE PROFILOWE - GŁOWA NA GÓRZE */
         .profile-container {
             width: 180px;
             height: 180px;
@@ -90,7 +88,7 @@
         }
 
         .hero-p { 
-            font-size: 1.15rem; 
+            font-size: 1.25rem; 
             font-weight: 700; 
             margin: 15px 0; 
             color: #111; 
@@ -118,7 +116,7 @@
         .btn-mail { background: var(--blue); }
         .btn-linkedin { background: var(--red); }
 
-        /* SEKCJA USŁUG - PRZESUNIĘTA O 1CM W DÓŁ */
+        /* SEKCJA USŁUG */
         .services { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
@@ -133,8 +131,6 @@
             padding: 25px; 
             border: 5px solid black; 
             box-shadow: 8px 8px 0px black; 
-            display: flex;
-            flex-direction: column;
         }
 
         .card h3 { 
@@ -161,7 +157,6 @@
             font-size: 1.6rem; 
         }
 
-        /* RESPONSYWNOŚĆ MOBILNA */
         @media (max-width: 768px) {
             .header-logo { position: relative; top: 0; left: 0; align-self: center; max-width: 250px; margin-bottom: 10px; }
             .hero-box { margin-top: 10px; width: 100%; border: none; box-shadow: none; transform: none; }
@@ -181,8 +176,7 @@
         
         <h1>Paweł Grabowski</h1>
         <p class="hero-p">
-            Project Manager z ponad 10-letnim doświadczeniem w projektach ERP i IT.
-            Ekspert od analizy procesów biznesowych i skutecznych wdrożeń systemowych.
+            Prowadzę wdrożenia ERP od analizy do startu produkcyjnego. Bez chaosu.
         </p>
         
         <div class="btn-group">
@@ -194,15 +188,15 @@
     <div class="services">
         <div class="card">
             <h3>Wdrożenia ERP</h3>
-            <p>Oferuję profesjonalne zarządzanie wdrożeniami systemów ERP, dbając o terminowość i zgodność z budżetem. Proces rozpoczynam od rzetelnej analizy warsztatowej, co pozwala na precyzyjne dopasowanie rozwiązań do specyfiki biznesu. Moje wsparcie kończy się dopiero po pełnej stabilizacji powdrożeniowej, gwarantując ciągłość procesów operacyjnych firmy.</p>
+            <p>Kompleksowe prowadzenie projektów wdrożeniowych systemów klasy ERP, obejmujące pełny cykl życia projektu. Zarządzam całym procesem – od wstępnej analizy potrzeb i warsztatów projektowych, aż po finalną stabilizację systemu u klienta.</p>
         </div>
         <div class="card">
             <h3>Analiza Procesów</h3>
-            <p>Przeprowadzam szczegółową analizę i mapowanie procesów biznesowych (BPMN), identyfikując obszary wymagające usprawnień. Wdrażam optymalizacje operacyjne, które eliminują wąskie gardła i przekładają się na wymierną redukcję kosztów funkcjonowania przedsiębiorstwa. Dzięki mojemu podejściu firma zyskuje wyższą wydajność oraz przejrzystą strukturę obiegu informacji i zadań.</p>
+            <p>Zajmuję się profesjonalnym mapowaniem procesów biznesowych w notacji BPMN oraz ich dogłębną optymalizacją operacyjną. Moje działania koncentrują się na realnej redukcji kosztów oraz znacznym zwiększeniu efektywności codziennych działań firmy.</p>
         </div>
         <div class="card">
             <h3>Koordynacja IT</h3>
-            <p>Buduję trwałe i profesjonalne relacje z dostawcami IT, pilnując jakości oraz terminowości dostarczanych przez nich usług. Odpowiadam za sprawną koordynację pracy zespołów wdrożeniowych, zapewniając płynny przepływ komunikacji na każdym etapie projektu. Specjalizuję się w zarządzaniu projektami w strukturach rozproszonych, gwarantując jednolity standard wdrożenia w całej organizacji.</p>
+            <p>Skutecznie zarządzam relacjami z dostawcami rozwiązań technologicznych oraz koordynuję pracę zespołów wdrożeniowych. Posiadam bogate doświadczenie w prowadzeniu złożonych projektów IT o skali wielooddziałowej, dbając o ich spójną realizację.</p>
         </div>
     </div>
 </div>
