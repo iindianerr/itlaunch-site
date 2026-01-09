@@ -3,102 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Launch | Paweł Grabowski - Project Manager ERP</title>
+    <title>IT Launch | Paweł Grabowski - Project Manager ERP & IT</title>
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --yellow: #FFD700;
-            --red: #E63946;
-            --blue: #0077B6;
-            --dark: #1D3557;
-            --white: #ffffff;
+        :root { 
+            --yellow: #FFD700; 
+            --red: #E63946; 
+            --blue: #0077B6; 
+            --dark: #1D3557; 
+        }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--yellow); 
+            margin: 0; 
+            color: var(--dark); 
         }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--yellow);
-            background-image: radial-gradient(var(--red) 15%, transparent 16%);
-            background-size: 20px 20px;
-            margin: 0;
-            color: var(--dark);
-        }
-
-        /* NAGŁÓWEK Z TWOIM TŁEM */
+        /* NAGŁÓWEK Z TWOIM KOMPLETNYM ZDJĘCIEM */
         header {
-            padding: 60px 20px;
-            text-align: center;
-            background-image: url('tlo.png'); /* TWOJA GRAFIKA TŁA */
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end; 
+            background-image: url('tlo.png'); /* TWOJA GRAFIKA Z LOGO I POSTACIĄ */
             background-size: cover;
             background-position: center;
             border-bottom: 10px solid black;
-            position: relative;
+            padding-bottom: 50px;
         }
 
-        /* KONTENER NA TWOJĄ POSTAĆ I TYTUŁ */
+        /* RAMKA Z TWOIM BIO */
         .hero-box {
-            background: white;
-            display: inline-block;
-            padding: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
             border: 6px solid black;
-            box-shadow: 15px 15px 0px var(--blue);
-            transform: rotate(1deg);
-            max-width: 90%;
+            box-shadow: 12px 12px 0px var(--blue);
+            max-width: 750px;
+            width: 90%;
+            text-align: center;
+            transform: rotate(-1deg);
         }
 
-        .hero-image {
-            width: 220px;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 6px solid black;
-            margin-bottom: 15px;
-            background: var(--yellow);
-        }
-
-        h1 {
-            font-family: 'Bangers', cursive;
-            font-size: clamp(3rem, 10vw, 5.5rem);
-            margin: 0;
-            color: black;
-            line-height: 0.9;
+        h1 { 
+            font-family: 'Bangers', cursive; 
+            font-size: 3.2rem; 
+            color: black; 
+            margin: 0; 
             text-transform: uppercase;
         }
 
-        .name-tag {
-            font-family: 'Bangers', cursive;
-            font-size: 2.2rem;
-            color: var(--red);
-            margin: 10px 0;
-            letter-spacing: 2px;
-        }
-
-        .hero-p {
-            font-size: 1.2rem;
-            font-weight: 700;
-            max-width: 600px;
-            margin: 20px auto;
+        .hero-p { 
+            font-size: 1.25rem; 
+            font-weight: 700; 
+            margin: 15px 0; 
+            color: #111; 
             line-height: 1.4;
         }
 
-        /* PRZYCISKI */
-        .btn-group {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-            flex-wrap: wrap;
+        /* PRZYCISKI KONTAKTOWE */
+        .btn-group { 
+            display: flex; 
+            justify-content: center; 
+            gap: 15px; 
+            flex-wrap: wrap; 
+            margin-top: 20px;
         }
 
-        .btn {
-            font-family: 'Bangers', cursive;
-            font-size: 1.8rem;
-            padding: 12px 35px;
-            text-decoration: none;
-            color: white;
-            border: 4px solid black;
-            box-shadow: 6px 6px 0px black;
-            transition: 0.1s;
-            text-transform: uppercase;
+        .btn { 
+            font-family: 'Bangers', cursive; 
+            font-size: 1.8rem; 
+            padding: 12px 35px; 
+            text-decoration: none; 
+            color: white; 
+            border: 4px solid black; 
+            box-shadow: 5px 5px 0px black; 
+            transition: 0.1s; 
         }
 
         .btn-mail { background: var(--blue); }
@@ -107,73 +88,61 @@
         .btn:hover { transform: scale(1.05); }
         .btn:active { transform: translate(4px, 4px); box-shadow: 0px 0px 0px black; }
 
-        /* SEKCJA USŁUG */
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            padding: 80px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
+        /* SEKCJA USŁUG NA PODSTAWIE DOŚWIADCZENIA */
+        .services { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+            padding: 60px 20px; 
+            max-width: 1200px; 
+            margin: 0 auto; 
         }
 
-        .card {
-            background: white;
-            padding: 40px;
-            border: 6px solid black;
-            box-shadow: 12px 12px 0px black;
+        .card { 
+            background: white; 
+            padding: 35px; 
+            border: 6px solid black; 
+            box-shadow: 10px 10px 0px black; 
             transition: 0.3s;
         }
 
-        .card:hover {
-            transform: translate(-8px, -8px);
-            box-shadow: 20px 20px 0px var(--blue);
+        .card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 15px 15px 0px var(--blue);
             border-color: var(--red);
         }
 
-        .card h3 {
-            font-family: 'Bangers', cursive;
-            font-size: 2.5rem;
-            color: black;
-            margin-top: 0;
-            text-transform: uppercase;
+        .card h3 { 
+            font-family: 'Bangers', cursive; 
+            font-size: 2.4rem; 
+            margin-top: 0; 
+            color: black; 
             border-bottom: 4px solid var(--yellow);
             display: inline-block;
         }
 
         .card p {
-            font-size: 1.1rem;
             font-weight: 600;
+            line-height: 1.5;
             color: #333;
-            margin-top: 20px;
         }
 
-        /* KONTAKT */
-        .contact-section {
-            background: black;
-            color: var(--yellow);
-            padding: 80px 20px;
-            text-align: center;
+        /* CZARNY PASEK KONTAKTOWY */
+        .contact-bar { 
+            background: black; 
+            color: var(--yellow); 
+            padding: 40px; 
+            text-align: center; 
+            font-family: 'Bangers', cursive; 
+            font-size: 2.2rem; 
         }
 
-        .contact-section h2 {
-            font-family: 'Bangers', cursive;
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-        }
-
-        .contact-info {
-            font-family: 'Bangers', cursive;
-            font-size: 2.2rem;
-            letter-spacing: 1px;
-        }
-
-        footer {
-            padding: 30px;
-            text-align: center;
-            font-weight: 800;
-            background: white;
-            border-top: 6px solid black;
+        footer { 
+            padding: 30px; 
+            text-align: center; 
+            font-weight: 800; 
+            background: white; 
+            border-top: 6px solid black; 
         }
     </style>
 </head>
@@ -181,19 +150,14 @@
 
 <header>
     <div class="hero-box">
-        <img src="postac.png" alt="Paweł Grabowski" class="hero-image">
-        
-        <h1>IT LAUNCH!</h1>
-        <div class="name-tag">Paweł Grabowski</div>
-        
+        <h1>Paweł Grabowski</h1>
         <p class="hero-p">
-            Project Manager z ponad 10-letnim doświadczeniem w projektach ERP I IT. 
-            Specjalizuję się we wdrożeniach systemów, analizie procesów oraz koordynacji zespołów[cite: 7].
+            Project Manager z ponad 10-letnim doświadczeniem w projektach ERP i IT[cite: 6]. 
+            Ekspert od analizy procesów biznesowych i skutecznych wdrożeń systemowych[cite: 7, 51].
         </p>
-        
         <div class="btn-group">
-            <a href="mailto:pawel@itlaunch.net" class="btn btn-mail">✉ Napisz do mnie!</a>
-            <a href="https://www.linkedin.com/in/pawełgrabowski" target="_blank" class="btn btn-linkedin">LinkedIn</a>
+            <a href="mailto:pawel@itlaunch.net" class="btn btn-mail">✉ NAPISZ DO MNIE!</a>
+            <a href="https://www.linkedin.com/in/pawełgrabowski" target="_blank" class="btn btn-linkedin">LINKEDIN</a>
         </div>
     </div>
 </header>
@@ -201,28 +165,24 @@
 <div class="services">
     <div class="card">
         <h3>Wdrożenia ERP</h3>
-        <p>Kompleksowe prowadzenie projektów ERP – od analizy i planowania, po testy UAT i stabilizację[cite: 29].</p>
+        <p>Kompleksowe prowadzenie projektów (m.in. Softlab) – od analizy warsztatowej po testy UAT i stabilizację[cite: 23, 29, 33].</p>
     </div>
     <div class="card">
-        <h3>Analiza Procesów</h3>
-        <p>Mapowanie BPMN i optymalizacja procesów operacyjnych[cite: 16, 18]. Skuteczne wsparcie wdrożeń rozwiązań IT[cite: 17].</p>
+        <h3>Analiza BPMN</h3>
+        <p>Mapowanie procesów biznesowych i optymalizacja operacyjna w celu redukcji kosztów i skrócenia czasu realizacji[cite: 16, 18, 45].</p>
     </div>
     <div class="card">
-        <h3>Zarządzanie</h3>
-        <p>Koordynacja współpracy między biznesem, IT a dostawcami systemów[cite: 30]. Zarządzanie zespołami wdrożeniowymi[cite: 54].</p>
+        <h3>Zarządzanie IT</h3>
+        <p>Koordynacja współpracy między biznesem a dostawcami systemów. Doświadczenie w projektach wielooddziałowych[cite: 8, 30, 75].</p>
     </div>
 </div>
 
-<section class="contact-section">
-    <h2>SKONTAKTUJ SIĘ!</h2>
-    <div class="contact-info">
-        📧 pawel@itlaunch.net<br>
-        📞 +48 606 931 676 
-    </div>
-</section>
+<div class="contact-bar">
+    📧 pawel@itlaunch.net | 📞 +48 606 931 676 
+</div>
 
 <footer>
-    &copy; 2026 IT Launch | Józefosław 
+    © 2026 IT Launch | Paweł Grabowski | Józefosław [cite: 2, 4]
 </footer>
 
 </body>
